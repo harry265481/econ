@@ -152,7 +152,7 @@
     }
 
     function getNationIncomeByID($link, $id) {
-        return getNationTaxIncomeByID($link, $id) + getNationProductionIncomeByID($link, $id) + getNationTradeNodeIncomeByID($link, $id) + getVassalIncome($link, $id) + calculateNationLoanIncomes($link, $id);
+        return getNationProvincialIncome($link, $id) + getNationTradeNodeIncomeByID($link, $id) + getVassalIncome($link, $id) + calculateNationLoanIncomes($link, $id);
     }
 
     function getStateMaintenaceOfNationByID($link, $id) {
@@ -173,6 +173,47 @@
             $vassalincome += (getNationIncomeByID($link, $house['ID']) * $house['liegeTax']) ;
         }
         return $vassalincome;
+    }
+
+    function getProvinceIncomeByID($link, $id) {
+        $sqlget = 'SELECT baseProd, tradegood, isCity, hasBanking, baseTax, hasReligiousSite FROM provinces WHERE ID = ' . $id;
+        $sqldata = mysqli_query($link, $sqlget);
+        $sqlProvince = mysqli_fetch_assoc($sqldata);
+        if($sqlProvince != null) {
+            $goodsProduced = getProvinceGoodsProducedByID($link, $id);
+            $tradeValue = $goodsProduced * getTradeGoodValueByID($link, $sqlProvince['tradegood']);
+            $productionincome = $tradeValue * getProductionEfficiency($link, $id);
+            $productionincome *= 10;
+        }
+        
+        if($sqlProvince != null) {
+            $taxEff = 0.75;
+            if($sqlProvince['isCity'] == true) {
+                $taxEff += 0.25;
+            }
+
+            if($sqlProvince['hasBanking'] == true) {
+                $taxEff += 0.20;
+            }
+
+            if($sqlProvince['hasReligiousSite'] == true) {
+                $taxEff += 0.60;
+            }
+            $tax = ($sqlProvince['baseTax']) * $taxEff * 10;
+            return $tax;
+        }
+
+        return $productionincome + $tax;
+    }
+
+    function getNationProvincialIncome($link, $id) { 
+        $income = 1;
+        $sqlget = 'SELECT id FROM provinces WHERE house = ' . $id;
+        $sqldata = mysqli_query($link, $sqlget);
+        while($province = mysqli_fetch_array($sqldata, MYSQLI_ASSOC)) {
+            $income += getProvinceIncomeByID($link, $province['id']);
+        }
+        return $income;
     }
 
     /*****************/

@@ -13,7 +13,7 @@ $house = $_GET['ID'];
 include 'config.php';
 include 'functions.php';
 $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
-$sqlget = 'SELECT * FROM house WHERE ID = ' . $house;
+$sqlget = 'SELECT name, liegeID, money, manpower, sailors, ID FROM house WHERE ID = ' . $house;
 $sqldata = mysqli_query($link, $sqlget);
 $sqlHouse = mysqli_fetch_assoc($sqldata);
 
@@ -27,19 +27,24 @@ include 'header/header.php';
                         <img src="img/House_<?php echo $sqlHouse["name"]?>.svg" width="200px">
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="profile-img">
-                        Liege: <img src="img/House_<?php echo getHouseNameByID($link, $sqlHouse["liegeID"]) ?>.svg" width="32px"> House: <?php echo getHouseNameByID($link, $sqlHouse["liegeID"]) ?>
-                    </div>
-                </div>
-            </div>
+            </div> 
+            <?php
+            if($sqlHouse['liegeID'] != 0) {
+                //If no liege, don't render
+        echo '<div class="row">';
+        echo     '<div class="col-md-6">';
+        echo         '<div class="profile-img">';
+        echo             'Liege: <img src="img/House_' . getHouseNameByID($link, $sqlHouse["liegeID"]) . '.svg" width="32px"> House: ' . getHouseNameByID($link, $sqlHouse["liegeID"]);
+        echo         '</div>';
+        echo     '</div>';
+        echo '</div>';
+            }
+        ?>
             <div class="row">
                 <div class="col-md-6">
                     <h5><img src="img/ducats.png">Gold Dragons: <?php echo number_format($sqlHouse['money']); ?></h5>
-                    <h5><img src="img/Base_manpower.png">Manpower: <?php echo number_format(getNationManpower($link, $sqlHouse["ID"])) . " / " . number_format(getNationMaxManpowerByID($link, $sqlHouse["ID"])) ?></h5>
-                    <h5><img width="28px" src="img/Sailors.png">Sailors: <?php echo number_format(getNationSailors($link, $sqlHouse["ID"])) . " / " . number_format(getNationMaxSailorsByID($link, $sqlHouse["ID"])) ?></h5>
+                    <h5><img src="img/Base_manpower.png">Manpower: <?php echo number_format($sqlHouse['manpower']) . " / " . number_format(getNationMaxManpowerByID($link, $sqlHouse["ID"])) ?></h5>
+                    <h5><img width="28px" src="img/Sailors.png">Sailors: <?php echo number_format($sqlHouse['sailors'])) . " / " . number_format(getNationMaxSailorsByID($link, $sqlHouse["ID"])) ?></h5>
                 </div>
             </div>
             <div class="row">
