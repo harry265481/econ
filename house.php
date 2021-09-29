@@ -44,7 +44,7 @@ include 'header/header.php';
                 <div class="col-md-6">
                     <h5><img src="img/ducats.png">Gold Dragons: <?php echo number_format($sqlHouse['money']); ?></h5>
                     <h5><img src="img/Base_manpower.png">Manpower: <?php echo number_format($sqlHouse['manpower']) . " / " . number_format(getNationMaxManpowerByID($link, $sqlHouse["ID"])) ?></h5>
-                    <h5><img width="28px" src="img/Sailors.png">Sailors: <?php echo number_format($sqlHouse['sailors'])) . " / " . number_format(getNationMaxSailorsByID($link, $sqlHouse["ID"])) ?></h5>
+                    <h5><img width="28px" src="img/Sailors.png">Sailors: <?php echo number_format($sqlHouse['sailors']) . " / " . number_format(getNationMaxSailorsByID($link, $sqlHouse["ID"])) ?></h5>
                 </div>
             </div>
             <div class="row">

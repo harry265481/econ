@@ -44,7 +44,6 @@
         if($sqlProvince['culture'] == 1) {
             $efficiency += 0.25;
         }
-
         return $efficiency;
     }
     
