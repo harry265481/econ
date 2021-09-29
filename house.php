@@ -24,7 +24,15 @@ include 'header/header.php';
             <div class="row">
                 <div class="col-md-6">
                     <div class="profile-img">
-                        <img src="img/House_<?php echo $sqlHouse["name"]?>.svg" width="200">
+                        <img src="img/House_<?php echo $sqlHouse["name"]?>.svg" width="200px">
+                        <img src="img/House_<?php echo getHouseNameByID($link, $sqlHouse["liegeID"]) ?>.svg" width="32px">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="profile-img">
+                        Liege: <img src="img/House_<?php echo getHouseNameByID($link, $sqlHouse["liegeID"]) ?>.svg" width="32px"> House: <?php echo getHouseNameByID($link, $sqlHouse["liegeID"]) ?>
                     </div>
                 </div>
             </div>
