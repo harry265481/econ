@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="600" height="600">
+<defs>
+  <radialGradient id="rg" gradientUnits="userSpaceOnUse" cx="220" cy="220" r="405">
+    <stop style="stop-color:#fff;stop-opacity:.3" offset="0"/>
+    <stop style="stop-color:#fff;stop-opacity:.2" offset=".2"/>
+    <stop style="stop-color:#666;stop-opacity:.1" offset=".6"/>
+    <stop style="stop-color:#000;stop-opacity:.13" offset="1"/>
+  </radialGradient>
+</defs>
+<path style="fill:none;stroke:#000000;stroke-width:6;stroke-miterlimit:10;" d="m 300,17.19 46,202.01 186.8,-89.7 -129.2,161.8 186.8,90.2 h -207.2 l 46,202 -129.2,-161.8 -129.2,161.8 46,-202 v 0 h -207.233 l 186.833,-90.2 -129.21,-161.8 186.81,89.7 z"/>
+<path id="r" style="fill:#cc0000;" d="m 300,315.2 -74.8,-59.9 28.8,-36.1 46,-202.01 46,202.01 28.8,36 z"/>
+<path id="o" style="fill:#ee7700;" d="m 300,315.2 46,-96 186.8,-89.7 -129.2,161.8 -10.2,45.1 z"/>
+<path id="y" style="fill:#ffff00;" d="m 300,315.2 103.6,-23.9 186.8,90.2 h -207.2 l -41.6,20.1 z"/>
+<path id="g" style="fill:#007700;" d="m 300,315.2 83.2,66.3 46,202 -129.2,-161.8 -41.6,-20.1 z"/>
+<path id="b" style="fill:#5555ff;" d="m 300,315.2 v 106.5 l -129.2,161.8 46,-202 -10.2,-45.1 z"/>
+<path id="i" style="fill:#5522aa;" d="m 300,315.2 -83.2,66.3 h 0 -207.233 l 186.833,-90.2 28.8,-36.1 z"/>
+<path id="v" style="fill:#660066;" d="m 300,315.2 -103.6,-23.9 -129.21,-161.8 186.81,89.7 z"/>
+<path style="fill:#000000;fill-opacity:0.2;" d="m 300,315.2 -232.81,-185.7 129.21,161.8 45.9,-22.1 11.7,-50 z m 0,0 -290.433,66.3 h 207.233 l 11.3,-49.9 -31.7,-40.3 z m 0,0 -129.2,268.3 129.2,-161.8 -32,-40 -51.2,-0.2 z m 0,0 129.2,268.3 -46,-202 -51.2,0.2 -32,40 z m 0,0 290.4,66.3 -186.8,-90.2 -31.7,40.3 11.3,49.9 z m 0,0 232.8,-185.7 -186.8,89.7 11.7,50 45.9,22.1 z m 0,0 v -298.01 l -46,202.01 46,22.2 46,-22.2 z"/>
+<path style="fill:url(#rg);" d="m 300,17.19 46,202.01 186.8,-89.7 -129.2,161.8 186.8,90.2 h -207.2 l 46,202 -129.2,-161.8 -129.2,161.8 46,-202 v 0 h -207.233 l 186.833,-90.2 -129.21,-161.8 186.81,89.7 z"/>
+</svg>
