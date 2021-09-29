@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Admin Panel</title>
+    <title>Economy Panel</title>
     <link href="dist/css/bootstrap.css" rel="stylesheet">
     <link href="assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
     <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>

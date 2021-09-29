@@ -16,57 +16,9 @@ $sqlrowHouse = mysqli_fetch_assoc($sqldataHouse);
 $money = $sqlrowHouse["money"];
 include 'header/header.php';
 ?>
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h1 style = "margin-top: 70px">Dashboard - <?php echo $sqlrowHouse["name"]; ?></h1>
-     	  <p class="page-header"></p>
-<?php
-    //Max players
-    echo '
-    <div class="row">
-    <div class="col-md-4">
-    ';
-
-    echo    "<div id='rcorners1'>";
-    echo        "<div class='box-top'><center><h1>Money</h1></div>";
-    echo        "<div class='box-panel'><p></p>";
-    echo        '<p><br><center><img src=\'img\ducats.png\'>' . $money . '</p>';
-    echo        '</div>';
-    echo    '</div>';
-
-    echo    '</div>';
-    echo '<div class="col-md-4">';
-
-    echo    "<div id='rcorners2'>";
-    echo        "<div class='box-top'><center><h1>Economy</h1></div>";
-    echo        "<div class='box-panel'><p></p>";
-    echo        '<p><br><center></p>';
-    echo        '<p><br><center></p>';
-    echo        '</div>';
-    echo    '</div>';
-
-    echo    '</div>';
-    echo '<div class="col-md-4">';
-
-    echo    "<div id='rcorners3'>";
-    echo        "<div class='box-top'><center><h1>Section Title</h1></div>";
-    echo        "<div class='box-panel'><p></p>";
-    echo        '<p><br><center></p>';
-    echo        '</div>';
-    echo    '</div>';
-
-    echo    '</div>';
-    echo    '</div>';
-    echo    '<div class="row">';
-    echo    '<div class="col-lg-4">';
-
-ob_end_flush();
-?>
-
-</div>
-</div>
-          </div>
-        </div>
-      </div>
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+      <h1 style = "margin-top: 70px">Dashboard - <?php echo $sqlrowHouse["name"]; ?></h1>
+       <p class="page-header">Work in progress</p> 
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

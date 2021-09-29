@@ -14,7 +14,7 @@ include 'config.php';
 include 'functions.php';
 
 $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
-$sqlget = 'SELECT ID, name FROM provinces WHERE house = ' . $house;
+$sqlget = 'SELECT ID, name FROM provinces WHERE house = ' . $house . ' AND isCoastal = 1';
 $sqldata = mysqli_query($link, $sqlget);
 
 include 'header/header.php';

@@ -36,7 +36,7 @@ include 'header/header.php';
                 </div>
                 <div class="row">
                     <div class="col-md-6">
-                        Province for units to be raised in:
+                        Province for units to be raised in:<select name="province" id="province">
                             <?php
                                 while($province = mysqli_fetch_array($sqldata, MYSQLI_ASSOC)) {
                                     echo "<option id=\"province\" name=\"province\" value=\"" . $province['ID'] . "\">" . $province['name'] . "</option>";

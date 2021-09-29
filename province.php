@@ -42,9 +42,9 @@ include 'header/header.php';
             </div>
             <div class="row">
                 <div class="col-md-6">
-                    <h5><img width="28px" src="img/Base_Tax.png"> Base Tax: <?php echo $sqlProvince['baseTax'] ?></h5>
-                    <h5><img width="28px" src="img/Base_Production.png"> Base Production <?php echo $sqlProvince['baseProd'] ?></h5>
-                    <h5><img width="28px" src="img/Base_Manpower.png"> Base Manpower <?php echo $sqlProvince['baseMP'] ?></h5>
+                    <h5><img width="28px" src="img/Base_tax.png"> Base Tax: <?php echo $sqlProvince['baseTax'] ?></h5>
+                    <h5><img width="28px" src="img/Base_production.png"> Base Production <?php echo $sqlProvince['baseProd'] ?></h5>
+                    <h5><img width="28px" src="img/Base_manpower.png"> Base Manpower <?php echo $sqlProvince['baseMP'] ?></h5>
                     <h5><img width="28px" src="img/Development.png"> Total Development <?php echo $development ?></h5>
                     <h5><img width="28px" src="img/Trade_power.png">Trade Power: <?php echo round(getProvinceTradepowerByID($link, $provinceID), 2) ?></h5>
                     <h5><img width="28px" src="img/Trade_value.png">Trade Value: <?php echo round(getProvinceTradeValueByID($link, $provinceID), 2) ?></h5>
