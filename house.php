@@ -25,7 +25,6 @@ include 'header/header.php';
                 <div class="col-md-6">
                     <div class="profile-img">
                         <img src="img/House_<?php echo $sqlHouse["name"]?>.svg" width="200px">
-                        <img src="img/House_<?php echo getHouseNameByID($link, $sqlHouse["liegeID"]) ?>.svg" width="32px">
                     </div>
                 </div>
             </div>
