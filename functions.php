@@ -46,11 +46,11 @@
         }
         return $efficiency;
     }
-    
+    /*
     function getProvinceIncomeByID($link, $id) {
         return getProvinceProductionIncomeByID($link, $id) + getTaxIncomeByProvinceID($link, $id);
     }
-
+*/
     function getProvinceDevelopmentByType($link, $id, $type) {
         $sqlget = 'SELECT baseMP, baseTax, baseProd FROM provinces WHERE ID = ' . $id;
         $sqldata = mysqli_query($link, $sqlget);
