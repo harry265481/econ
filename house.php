@@ -13,7 +13,7 @@ $house = $_GET['ID'];
 include 'config.php';
 include 'functions.php';
 $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
-$sqlget = 'SELECT name, liegeID, money, manpower, sailors, ID FROM house WHERE ID = ' . $house;
+$sqlget = 'SELECT name, liegeID, money, manpower, sailors, ID, liegeTax FROM house WHERE ID = ' . $house;
 $sqldata = mysqli_query($link, $sqlget);
 $sqlHouse = mysqli_fetch_assoc($sqldata);
 
@@ -63,7 +63,7 @@ include 'header/header.php';
                     <div class="profile-head">
                         <h3>Expenditure per month<br>(1 IRL Week)</h5>
                         <h5><img width="28px" src="img/State_maintenance.png">Household Maintenance: <?php $maintenance = getStateMaintenaceOfNationByID($link, $house); echo round($maintenance, 2); ?></h5>
-                        <h5><img width="28px" src="img/Income_from_vassals.png">Vassal Tax: <?php if($house == 2) { echo $vassaltax = 0;} else { $vassaltax = $totalincome * 0.25; echo number_format(round($vassaltax, 2));} ?></h5>
+                        <h5><img width="28px" src="img/Income_from_vassals.png">Vassal Tax: <?php if($house == 2) { echo $vassaltax = 0;} else { $vassaltax = $totalincome * $sqlHouse["liegeTax"]; echo number_format(round($vassaltax, 2));} ?> at <?php echo ($sqlHouse["liegeTax"] * 100) . "%" ?></h5>
                         <h5><img width="28px" src="img/Land_maintenance.png">Army Maintenance: <?php echo $armymaint = getNationArmyMaintenanceByID($link, $house); ?></h5>
                         <h5><img width="28px" src="img/Naval_maintenance.png">Naval Maintenance: <?php echo $navalmaint = getNationNavalMaintenanceByID($link, $house); ?></h5>
                         <h5><img width="28px" src="img/Interest_per_annum.png">Loan Payments: <?php $loanexp = calculateNationLoanRepayments($link, $house);  echo number_format(round($loanexp, 2));?></h5>
