@@ -96,6 +96,9 @@ include 'header/header.php';
                         <li class="nav-item" role="presentation">
                             <button class="nav-link" id="vassalsTab" data-bs-toggle="tab" data-bs-target="#vassals" role="tab" type="button" aria-controls="vassals" aria-selected="false">Vassals</button>
                         </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="actionsTab" data-bs-toggle="tab" data-bs-target="#actions" role="tab" type="button" aria-controls="actions" aria-selected="false">Diplomatic Actions</button>
+                        </li>
                     </ul>
                     <div class="tab-content" id="myTabContent" >
                         <div class="tab-pane fade show active" id="provinces" role="tabpanel" arial-labelledby="provinces-tab">

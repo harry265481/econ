@@ -1091,11 +1091,11 @@
                 if($province != NULL || $province != "") {
                     $name = getHouseNameByID($link, $province['house']);
                     echo "<a xlink:href = \"province.php?ID=" . $province['ID'] . "\">";
-                    echo "<path " . $province['shape'] . "stroke=\"black\" fill=\"". $color . "\" stroke-width=\"3\" \"/>";
+                    echo "<path " . $province['shape'] . "stroke=\"black\" fill=\"". $color . "\" stroke-width=\"3\"/>";
                     echo "</a>";
                     echo "<g class=\"tooltip css\" transform=\"translate(1000,450)\">";
                     echo    "<rect x=\"-3em\" y=\"-45\" width=\"200px\" height=\"200px\"/>";
-                    echo    "<image width=100px xlink:href=\"img/House_" . $name . ".svg\" />";
+                    echo    "<image width=100px xlink:href=\"http://66.29.143.80/img/House_" . $name . ".svg\" />";
                     echo    "<text x=\"50px\" y=\"-45\" dy=\"1em\" text-anchor=\"middle\">" . $province['name'] . "</text>";
                     echo    "<text x=\"50px\" y=\"120px\" dy=\"1em\" text-anchor=\"middle\">House " . $name . "</text>";
                     echo "</g>";
